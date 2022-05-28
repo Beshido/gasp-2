@@ -1,0 +1,198 @@
+
+** Conflict (shift/reduce) in state 45.
+** Token involved: LETTER
+** This state is reached from automaton after reading:
+
+decl PROG CN LETTER COLON CT stks
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+automaton 
+decl PROG prog EOF 
+          CN list(ltrs) 
+             (?)
+
+** In state 45, looking ahead at LETTER, reducing production
+** list(stks) ->
+** is permitted because of the following sub-derivation:
+
+ltrs list(ltrs) // lookahead token appears because list(ltrs) can begin with LETTER
+LETTER COLON prog // lookahead token is inherited
+             CT list(stks) // lookahead token is inherited
+                stks list(stks) // lookahead token is inherited
+                     . 
+
+** In state 45, looking ahead at LETTER, shifting is permitted
+** because of the following sub-derivation:
+
+ltrs list(ltrs) 
+LETTER COLON prog 
+             CT list(stks) 
+                stks list(stks) 
+                     stks list(stks) 
+                     . LETTER COLON BEGIN prog END 
+
+** Conflict (shift/reduce) in state 40.
+** Token involved: LETTER
+** This state is reached from automaton after reading:
+
+decl PROG CN LETTER COLON CS stts
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+automaton 
+decl PROG prog EOF 
+          CN list(ltrs) 
+             (?)
+
+** In state 40, looking ahead at LETTER, reducing production
+** list(stts) ->
+** is permitted because of the following sub-derivation:
+
+ltrs list(ltrs) // lookahead token appears because list(ltrs) can begin with LETTER
+LETTER COLON prog // lookahead token is inherited
+             CS list(stts) // lookahead token is inherited
+                stts list(stts) // lookahead token is inherited
+                     . 
+
+** In state 40, looking ahead at LETTER, shifting is permitted
+** because of the following sub-derivation:
+
+ltrs list(ltrs) 
+LETTER COLON prog 
+             CS list(stts) 
+                stts list(stts) 
+                     stts list(stts) 
+                     . LETTER COLON BEGIN prog END 
+
+** Conflict (shift/reduce) in state 35.
+** Token involved: LETTER
+** This state is reached from automaton after reading:
+
+decl PROG CN LETTER COLON CN ltrs
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+automaton 
+decl PROG prog EOF 
+          CN list(ltrs) 
+             (?)
+
+** In state 35, looking ahead at LETTER, reducing production
+** list(ltrs) ->
+** is permitted because of the following sub-derivation:
+
+ltrs list(ltrs) // lookahead token appears because list(ltrs) can begin with LETTER
+LETTER COLON prog // lookahead token is inherited
+             CN list(ltrs) // lookahead token is inherited
+                ltrs list(ltrs) // lookahead token is inherited
+                     . 
+
+** In state 35, looking ahead at LETTER, shifting is permitted
+** because of the following sub-derivation:
+
+ltrs list(ltrs) 
+LETTER COLON prog 
+             CN list(ltrs) 
+                ltrs list(ltrs) 
+                     ltrs list(ltrs) 
+                     . LETTER COLON prog 
+
+** Conflict (shift/reduce) in state 29.
+** Token involved: LETTER
+** This state is reached from automaton after reading:
+
+decl PROG CN LETTER COLON CN
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+automaton 
+decl PROG prog EOF 
+          CN list(ltrs) 
+             (?)
+
+** In state 29, looking ahead at LETTER, reducing production
+** list(ltrs) ->
+** is permitted because of the following sub-derivation:
+
+ltrs list(ltrs) // lookahead token appears because list(ltrs) can begin with LETTER
+LETTER COLON prog // lookahead token is inherited
+             CN list(ltrs) // lookahead token is inherited
+                . 
+
+** In state 29, looking ahead at LETTER, shifting is permitted
+** because of the following sub-derivation:
+
+ltrs list(ltrs) 
+LETTER COLON prog 
+             CN list(ltrs) 
+                ltrs list(ltrs) 
+                . LETTER COLON prog 
+
+** Conflict (shift/reduce) in state 25.
+** Token involved: LETTER
+** This state is reached from automaton after reading:
+
+decl PROG CN LETTER COLON CS
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+automaton 
+decl PROG prog EOF 
+          CN list(ltrs) 
+             (?)
+
+** In state 25, looking ahead at LETTER, reducing production
+** list(stts) ->
+** is permitted because of the following sub-derivation:
+
+ltrs list(ltrs) // lookahead token appears because list(ltrs) can begin with LETTER
+LETTER COLON prog // lookahead token is inherited
+             CS list(stts) // lookahead token is inherited
+                . 
+
+** In state 25, looking ahead at LETTER, shifting is permitted
+** because of the following sub-derivation:
+
+ltrs list(ltrs) 
+LETTER COLON prog 
+             CS list(stts) 
+                stts list(stts) 
+                . LETTER COLON BEGIN prog END 
+
+** Conflict (shift/reduce) in state 21.
+** Token involved: LETTER
+** This state is reached from automaton after reading:
+
+decl PROG CN LETTER COLON CT
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+automaton 
+decl PROG prog EOF 
+          CN list(ltrs) 
+             (?)
+
+** In state 21, looking ahead at LETTER, reducing production
+** list(stks) ->
+** is permitted because of the following sub-derivation:
+
+ltrs list(ltrs) // lookahead token appears because list(ltrs) can begin with LETTER
+LETTER COLON prog // lookahead token is inherited
+             CT list(stks) // lookahead token is inherited
+                . 
+
+** In state 21, looking ahead at LETTER, shifting is permitted
+** because of the following sub-derivation:
+
+ltrs list(ltrs) 
+LETTER COLON prog 
+             CT list(stks) 
+                stks list(stks) 
+                . LETTER COLON BEGIN prog END 

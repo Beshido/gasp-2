@@ -1,0 +1,34 @@
+type token =
+    STTS
+  | SSYMS
+  | REJECT
+  | PUSH
+  | PROG
+  | POP
+  | LETTER of char
+  | ISYMS
+  | ISTT
+  | ISTK
+  | EOF
+  | END
+  | CT
+  | CS
+  | COMMA
+  | COLON
+  | CN
+  | CHANGE
+  | BEGIN
+val menhir_begin_marker : int
+val xv_stts : char * Ast.program
+val xv_stks : char * Ast.program
+val xv_separated_nonempty_list_COMMA_LETTER_ : char list
+val xv_separated_list_COMMA_LETTER_ : char list
+val xv_prog : Ast.program
+val xv_ltrs : char * Ast.program
+val xv_loption_separated_nonempty_list_COMMA_LETTER__ : char list
+val xv_list_stts_ : (char * Ast.program) list
+val xv_list_stks_ : (char * Ast.program) list
+val xv_list_ltrs_ : (char * Ast.program) list
+val xv_decl : Ast.declaration
+val xv_automaton : Ast.automaton
+val menhir_end_marker : int

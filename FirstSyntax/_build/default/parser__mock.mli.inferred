@@ -1,0 +1,26 @@
+type token =
+    TRNS
+  | STTS
+  | SSYMS
+  | SCLN
+  | RPAR
+  | LPAR
+  | LETTER of char
+  | ISYMS
+  | ISTT
+  | ISTK
+  | EOF
+  | COMMA
+val menhir_begin_marker : int
+val xv_trns : Ast.transition
+val xv_separated_nonempty_list_SCLN_LETTER_ : char list
+val xv_separated_nonempty_list_COMMA_LETTER_ : char list
+val xv_separated_list_SCLN_LETTER_ : char list
+val xv_separated_list_COMMA_LETTER_ : char list
+val xv_option_LETTER_ : char option
+val xv_loption_separated_nonempty_list_SCLN_LETTER__ : char list
+val xv_loption_separated_nonempty_list_COMMA_LETTER__ : char list
+val xv_list_trns_ : Ast.transition list
+val xv_decl : Ast.declaration
+val xv_automaton : Ast.automaton
+val menhir_end_marker : int

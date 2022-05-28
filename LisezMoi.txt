@@ -1,0 +1,3 @@
+Pour compiler, il faut simplement utiliser make
+
+Il manque dans ce projet l'interpreteur de la partie 3 (la 2ème syntaxe) sinon le reste est fonctionnel.

@@ -1,0 +1,553 @@
+State 0:
+## Known stack suffix:
+##
+## LR(1) items:
+automaton' -> . automaton [ # ]
+## Transitions:
+-- On ISYMS shift to state 1
+-- On decl shift to state 15
+-- On automaton shift to state 50
+## Reductions:
+
+State 1:
+## Known stack suffix:
+## ISYMS
+## LR(1) items:
+decl -> ISYMS . loption(separated_nonempty_list(COMMA,LETTER)) SSYMS loption(separated_nonempty_list(COMMA,LETTER)) STTS loption(separated_nonempty_list(COMMA,LETTER)) ISTT LETTER ISTK LETTER [ PROG ]
+## Transitions:
+-- On LETTER shift to state 2
+-- On separated_nonempty_list(COMMA,LETTER) shift to state 5
+-- On loption(separated_nonempty_list(COMMA,LETTER)) shift to state 6
+## Reductions:
+-- On SSYMS
+--   reduce production loption(separated_nonempty_list(COMMA,LETTER)) ->
+
+State 2:
+## Known stack suffix:
+## LETTER
+## LR(1) items:
+separated_nonempty_list(COMMA,LETTER) -> LETTER . [ STTS SSYMS ISTT ]
+separated_nonempty_list(COMMA,LETTER) -> LETTER . COMMA separated_nonempty_list(COMMA,LETTER) [ STTS SSYMS ISTT ]
+## Transitions:
+-- On COMMA shift to state 3
+## Reductions:
+-- On STTS SSYMS ISTT
+--   reduce production separated_nonempty_list(COMMA,LETTER) -> LETTER
+
+State 3:
+## Known stack suffix:
+## LETTER COMMA
+## LR(1) items:
+separated_nonempty_list(COMMA,LETTER) -> LETTER COMMA . separated_nonempty_list(COMMA,LETTER) [ STTS SSYMS ISTT ]
+## Transitions:
+-- On LETTER shift to state 2
+-- On separated_nonempty_list(COMMA,LETTER) shift to state 4
+## Reductions:
+
+State 4:
+## Known stack suffix:
+## LETTER COMMA separated_nonempty_list(COMMA,LETTER)
+## LR(1) items:
+separated_nonempty_list(COMMA,LETTER) -> LETTER COMMA separated_nonempty_list(COMMA,LETTER) . [ STTS SSYMS ISTT ]
+## Transitions:
+## Reductions:
+-- On STTS SSYMS ISTT
+--   reduce production separated_nonempty_list(COMMA,LETTER) -> LETTER COMMA separated_nonempty_list(COMMA,LETTER)
+
+State 5:
+## Known stack suffix:
+## separated_nonempty_list(COMMA,LETTER)
+## LR(1) items:
+loption(separated_nonempty_list(COMMA,LETTER)) -> separated_nonempty_list(COMMA,LETTER) . [ STTS SSYMS ISTT ]
+## Transitions:
+## Reductions:
+-- On STTS SSYMS ISTT
+--   reduce production loption(separated_nonempty_list(COMMA,LETTER)) -> separated_nonempty_list(COMMA,LETTER)
+
+State 6:
+## Known stack suffix:
+## ISYMS loption(separated_nonempty_list(COMMA,LETTER))
+## LR(1) items:
+decl -> ISYMS loption(separated_nonempty_list(COMMA,LETTER)) . SSYMS loption(separated_nonempty_list(COMMA,LETTER)) STTS loption(separated_nonempty_list(COMMA,LETTER)) ISTT LETTER ISTK LETTER [ PROG ]
+## Transitions:
+-- On SSYMS shift to state 7
+## Reductions:
+
+State 7:
+## Known stack suffix:
+## ISYMS loption(separated_nonempty_list(COMMA,LETTER)) SSYMS
+## LR(1) items:
+decl -> ISYMS loption(separated_nonempty_list(COMMA,LETTER)) SSYMS . loption(separated_nonempty_list(COMMA,LETTER)) STTS loption(separated_nonempty_list(COMMA,LETTER)) ISTT LETTER ISTK LETTER [ PROG ]
+## Transitions:
+-- On LETTER shift to state 2
+-- On separated_nonempty_list(COMMA,LETTER) shift to state 5
+-- On loption(separated_nonempty_list(COMMA,LETTER)) shift to state 8
+## Reductions:
+-- On STTS
+--   reduce production loption(separated_nonempty_list(COMMA,LETTER)) ->
+
+State 8:
+## Known stack suffix:
+## ISYMS loption(separated_nonempty_list(COMMA,LETTER)) SSYMS loption(separated_nonempty_list(COMMA,LETTER))
+## LR(1) items:
+decl -> ISYMS loption(separated_nonempty_list(COMMA,LETTER)) SSYMS loption(separated_nonempty_list(COMMA,LETTER)) . STTS loption(separated_nonempty_list(COMMA,LETTER)) ISTT LETTER ISTK LETTER [ PROG ]
+## Transitions:
+-- On STTS shift to state 9
+## Reductions:
+
+State 9:
+## Known stack suffix:
+## ISYMS loption(separated_nonempty_list(COMMA,LETTER)) SSYMS loption(separated_nonempty_list(COMMA,LETTER)) STTS
+## LR(1) items:
+decl -> ISYMS loption(separated_nonempty_list(COMMA,LETTER)) SSYMS loption(separated_nonempty_list(COMMA,LETTER)) STTS . loption(separated_nonempty_list(COMMA,LETTER)) ISTT LETTER ISTK LETTER [ PROG ]
+## Transitions:
+-- On LETTER shift to state 2
+-- On separated_nonempty_list(COMMA,LETTER) shift to state 5
+-- On loption(separated_nonempty_list(COMMA,LETTER)) shift to state 10
+## Reductions:
+-- On ISTT
+--   reduce production loption(separated_nonempty_list(COMMA,LETTER)) ->
+
+State 10:
+## Known stack suffix:
+## ISYMS loption(separated_nonempty_list(COMMA,LETTER)) SSYMS loption(separated_nonempty_list(COMMA,LETTER)) STTS loption(separated_nonempty_list(COMMA,LETTER))
+## LR(1) items:
+decl -> ISYMS loption(separated_nonempty_list(COMMA,LETTER)) SSYMS loption(separated_nonempty_list(COMMA,LETTER)) STTS loption(separated_nonempty_list(COMMA,LETTER)) . ISTT LETTER ISTK LETTER [ PROG ]
+## Transitions:
+-- On ISTT shift to state 11
+## Reductions:
+
+State 11:
+## Known stack suffix:
+## ISYMS loption(separated_nonempty_list(COMMA,LETTER)) SSYMS loption(separated_nonempty_list(COMMA,LETTER)) STTS loption(separated_nonempty_list(COMMA,LETTER)) ISTT
+## LR(1) items:
+decl -> ISYMS loption(separated_nonempty_list(COMMA,LETTER)) SSYMS loption(separated_nonempty_list(COMMA,LETTER)) STTS loption(separated_nonempty_list(COMMA,LETTER)) ISTT . LETTER ISTK LETTER [ PROG ]
+## Transitions:
+-- On LETTER shift to state 12
+## Reductions:
+
+State 12:
+## Known stack suffix:
+## ISYMS loption(separated_nonempty_list(COMMA,LETTER)) SSYMS loption(separated_nonempty_list(COMMA,LETTER)) STTS loption(separated_nonempty_list(COMMA,LETTER)) ISTT LETTER
+## LR(1) items:
+decl -> ISYMS loption(separated_nonempty_list(COMMA,LETTER)) SSYMS loption(separated_nonempty_list(COMMA,LETTER)) STTS loption(separated_nonempty_list(COMMA,LETTER)) ISTT LETTER . ISTK LETTER [ PROG ]
+## Transitions:
+-- On ISTK shift to state 13
+## Reductions:
+
+State 13:
+## Known stack suffix:
+## ISYMS loption(separated_nonempty_list(COMMA,LETTER)) SSYMS loption(separated_nonempty_list(COMMA,LETTER)) STTS loption(separated_nonempty_list(COMMA,LETTER)) ISTT LETTER ISTK
+## LR(1) items:
+decl -> ISYMS loption(separated_nonempty_list(COMMA,LETTER)) SSYMS loption(separated_nonempty_list(COMMA,LETTER)) STTS loption(separated_nonempty_list(COMMA,LETTER)) ISTT LETTER ISTK . LETTER [ PROG ]
+## Transitions:
+-- On LETTER shift to state 14
+## Reductions:
+
+State 14:
+## Known stack suffix:
+## ISYMS loption(separated_nonempty_list(COMMA,LETTER)) SSYMS loption(separated_nonempty_list(COMMA,LETTER)) STTS loption(separated_nonempty_list(COMMA,LETTER)) ISTT LETTER ISTK LETTER
+## LR(1) items:
+decl -> ISYMS loption(separated_nonempty_list(COMMA,LETTER)) SSYMS loption(separated_nonempty_list(COMMA,LETTER)) STTS loption(separated_nonempty_list(COMMA,LETTER)) ISTT LETTER ISTK LETTER . [ PROG ]
+## Transitions:
+## Reductions:
+-- On PROG
+--   reduce production decl -> ISYMS loption(separated_nonempty_list(COMMA,LETTER)) SSYMS loption(separated_nonempty_list(COMMA,LETTER)) STTS loption(separated_nonempty_list(COMMA,LETTER)) ISTT LETTER ISTK LETTER
+
+State 15:
+## Known stack suffix:
+## decl
+## LR(1) items:
+automaton -> decl . PROG prog EOF [ # ]
+## Transitions:
+-- On PROG shift to state 16
+## Reductions:
+
+State 16:
+## Known stack suffix:
+## decl PROG
+## LR(1) items:
+automaton -> decl PROG . prog EOF [ # ]
+## Transitions:
+-- On REJECT shift to state 17
+-- On PUSH shift to state 18
+-- On POP shift to state 20
+-- On CT shift to state 21
+-- On CS shift to state 25
+-- On CN shift to state 29
+-- On CHANGE shift to state 32
+-- On prog shift to state 48
+## Reductions:
+
+State 17:
+## Known stack suffix:
+## REJECT
+## LR(1) items:
+prog -> REJECT . [ LETTER EOF END ]
+## Transitions:
+## Reductions:
+-- On LETTER EOF END
+--   reduce production prog -> REJECT
+
+State 18:
+## Known stack suffix:
+## PUSH
+## LR(1) items:
+prog -> PUSH . LETTER [ LETTER EOF END ]
+## Transitions:
+-- On LETTER shift to state 19
+## Reductions:
+
+State 19:
+## Known stack suffix:
+## PUSH LETTER
+## LR(1) items:
+prog -> PUSH LETTER . [ LETTER EOF END ]
+## Transitions:
+## Reductions:
+-- On LETTER EOF END
+--   reduce production prog -> PUSH LETTER
+
+State 20:
+## Known stack suffix:
+## POP
+## LR(1) items:
+prog -> POP . [ LETTER EOF END ]
+## Transitions:
+## Reductions:
+-- On LETTER EOF END
+--   reduce production prog -> POP
+
+State 21:
+## Known stack suffix:
+## CT
+## LR(1) items:
+prog -> CT . list(stks) [ LETTER EOF END ]
+## Transitions:
+-- On LETTER shift to state 22
+-- On stks shift to state 45
+-- On list(stks) shift to state 47
+## Reductions:
+-- On LETTER EOF END
+--   reduce production list(stks) ->
+** Conflict on LETTER
+
+State 22:
+## Known stack suffix:
+## LETTER
+## LR(1) items:
+stks -> LETTER . COLON BEGIN prog END [ LETTER EOF END ]
+## Transitions:
+-- On COLON shift to state 23
+## Reductions:
+
+State 23:
+## Known stack suffix:
+## LETTER COLON
+## LR(1) items:
+stks -> LETTER COLON . BEGIN prog END [ LETTER EOF END ]
+## Transitions:
+-- On BEGIN shift to state 24
+## Reductions:
+
+State 24:
+## Known stack suffix:
+## LETTER COLON BEGIN
+## LR(1) items:
+stks -> LETTER COLON BEGIN . prog END [ LETTER EOF END ]
+## Transitions:
+-- On REJECT shift to state 17
+-- On PUSH shift to state 18
+-- On POP shift to state 20
+-- On CT shift to state 21
+-- On CS shift to state 25
+-- On CN shift to state 29
+-- On CHANGE shift to state 32
+-- On prog shift to state 43
+## Reductions:
+
+State 25:
+## Known stack suffix:
+## CS
+## LR(1) items:
+prog -> CS . list(stts) [ LETTER EOF END ]
+## Transitions:
+-- On LETTER shift to state 26
+-- On stts shift to state 40
+-- On list(stts) shift to state 42
+## Reductions:
+-- On LETTER EOF END
+--   reduce production list(stts) ->
+** Conflict on LETTER
+
+State 26:
+## Known stack suffix:
+## LETTER
+## LR(1) items:
+stts -> LETTER . COLON BEGIN prog END [ LETTER EOF END ]
+## Transitions:
+-- On COLON shift to state 27
+## Reductions:
+
+State 27:
+## Known stack suffix:
+## LETTER COLON
+## LR(1) items:
+stts -> LETTER COLON . BEGIN prog END [ LETTER EOF END ]
+## Transitions:
+-- On BEGIN shift to state 28
+## Reductions:
+
+State 28:
+## Known stack suffix:
+## LETTER COLON BEGIN
+## LR(1) items:
+stts -> LETTER COLON BEGIN . prog END [ LETTER EOF END ]
+## Transitions:
+-- On REJECT shift to state 17
+-- On PUSH shift to state 18
+-- On POP shift to state 20
+-- On CT shift to state 21
+-- On CS shift to state 25
+-- On CN shift to state 29
+-- On CHANGE shift to state 32
+-- On prog shift to state 38
+## Reductions:
+
+State 29:
+## Known stack suffix:
+## CN
+## LR(1) items:
+prog -> CN . list(ltrs) [ LETTER EOF END ]
+## Transitions:
+-- On LETTER shift to state 30
+-- On ltrs shift to state 35
+-- On list(ltrs) shift to state 37
+## Reductions:
+-- On LETTER EOF END
+--   reduce production list(ltrs) ->
+** Conflict on LETTER
+
+State 30:
+## Known stack suffix:
+## LETTER
+## LR(1) items:
+ltrs -> LETTER . COLON prog [ LETTER EOF END ]
+## Transitions:
+-- On COLON shift to state 31
+## Reductions:
+
+State 31:
+## Known stack suffix:
+## LETTER COLON
+## LR(1) items:
+ltrs -> LETTER COLON . prog [ LETTER EOF END ]
+## Transitions:
+-- On REJECT shift to state 17
+-- On PUSH shift to state 18
+-- On POP shift to state 20
+-- On CT shift to state 21
+-- On CS shift to state 25
+-- On CN shift to state 29
+-- On CHANGE shift to state 32
+-- On prog shift to state 34
+## Reductions:
+
+State 32:
+## Known stack suffix:
+## CHANGE
+## LR(1) items:
+prog -> CHANGE . LETTER [ LETTER EOF END ]
+## Transitions:
+-- On LETTER shift to state 33
+## Reductions:
+
+State 33:
+## Known stack suffix:
+## CHANGE LETTER
+## LR(1) items:
+prog -> CHANGE LETTER . [ LETTER EOF END ]
+## Transitions:
+## Reductions:
+-- On LETTER EOF END
+--   reduce production prog -> CHANGE LETTER
+
+State 34:
+## Known stack suffix:
+## LETTER COLON prog
+## LR(1) items:
+ltrs -> LETTER COLON prog . [ LETTER EOF END ]
+## Transitions:
+## Reductions:
+-- On LETTER EOF END
+--   reduce production ltrs -> LETTER COLON prog
+
+State 35:
+## Known stack suffix:
+## ltrs
+## LR(1) items:
+list(ltrs) -> ltrs . list(ltrs) [ LETTER EOF END ]
+## Transitions:
+-- On LETTER shift to state 30
+-- On ltrs shift to state 35
+-- On list(ltrs) shift to state 36
+## Reductions:
+-- On LETTER EOF END
+--   reduce production list(ltrs) ->
+** Conflict on LETTER
+
+State 36:
+## Known stack suffix:
+## ltrs list(ltrs)
+## LR(1) items:
+list(ltrs) -> ltrs list(ltrs) . [ LETTER EOF END ]
+## Transitions:
+## Reductions:
+-- On LETTER EOF END
+--   reduce production list(ltrs) -> ltrs list(ltrs)
+
+State 37:
+## Known stack suffix:
+## CN list(ltrs)
+## LR(1) items:
+prog -> CN list(ltrs) . [ LETTER EOF END ]
+## Transitions:
+## Reductions:
+-- On LETTER EOF END
+--   reduce production prog -> CN list(ltrs)
+
+State 38:
+## Known stack suffix:
+## LETTER COLON BEGIN prog
+## LR(1) items:
+stts -> LETTER COLON BEGIN prog . END [ LETTER EOF END ]
+## Transitions:
+-- On END shift to state 39
+## Reductions:
+
+State 39:
+## Known stack suffix:
+## LETTER COLON BEGIN prog END
+## LR(1) items:
+stts -> LETTER COLON BEGIN prog END . [ LETTER EOF END ]
+## Transitions:
+## Reductions:
+-- On LETTER EOF END
+--   reduce production stts -> LETTER COLON BEGIN prog END
+
+State 40:
+## Known stack suffix:
+## stts
+## LR(1) items:
+list(stts) -> stts . list(stts) [ LETTER EOF END ]
+## Transitions:
+-- On LETTER shift to state 26
+-- On stts shift to state 40
+-- On list(stts) shift to state 41
+## Reductions:
+-- On LETTER EOF END
+--   reduce production list(stts) ->
+** Conflict on LETTER
+
+State 41:
+## Known stack suffix:
+## stts list(stts)
+## LR(1) items:
+list(stts) -> stts list(stts) . [ LETTER EOF END ]
+## Transitions:
+## Reductions:
+-- On LETTER EOF END
+--   reduce production list(stts) -> stts list(stts)
+
+State 42:
+## Known stack suffix:
+## CS list(stts)
+## LR(1) items:
+prog -> CS list(stts) . [ LETTER EOF END ]
+## Transitions:
+## Reductions:
+-- On LETTER EOF END
+--   reduce production prog -> CS list(stts)
+
+State 43:
+## Known stack suffix:
+## LETTER COLON BEGIN prog
+## LR(1) items:
+stks -> LETTER COLON BEGIN prog . END [ LETTER EOF END ]
+## Transitions:
+-- On END shift to state 44
+## Reductions:
+
+State 44:
+## Known stack suffix:
+## LETTER COLON BEGIN prog END
+## LR(1) items:
+stks -> LETTER COLON BEGIN prog END . [ LETTER EOF END ]
+## Transitions:
+## Reductions:
+-- On LETTER EOF END
+--   reduce production stks -> LETTER COLON BEGIN prog END
+
+State 45:
+## Known stack suffix:
+## stks
+## LR(1) items:
+list(stks) -> stks . list(stks) [ LETTER EOF END ]
+## Transitions:
+-- On LETTER shift to state 22
+-- On stks shift to state 45
+-- On list(stks) shift to state 46
+## Reductions:
+-- On LETTER EOF END
+--   reduce production list(stks) ->
+** Conflict on LETTER
+
+State 46:
+## Known stack suffix:
+## stks list(stks)
+## LR(1) items:
+list(stks) -> stks list(stks) . [ LETTER EOF END ]
+## Transitions:
+## Reductions:
+-- On LETTER EOF END
+--   reduce production list(stks) -> stks list(stks)
+
+State 47:
+## Known stack suffix:
+## CT list(stks)
+## LR(1) items:
+prog -> CT list(stks) . [ LETTER EOF END ]
+## Transitions:
+## Reductions:
+-- On LETTER EOF END
+--   reduce production prog -> CT list(stks)
+
+State 48:
+## Known stack suffix:
+## decl PROG prog
+## LR(1) items:
+automaton -> decl PROG prog . EOF [ # ]
+## Transitions:
+-- On EOF shift to state 49
+## Reductions:
+
+State 49:
+## Known stack suffix:
+## decl PROG prog EOF
+## LR(1) items:
+automaton -> decl PROG prog EOF . [ # ]
+## Transitions:
+## Reductions:
+-- On #
+--   reduce production automaton -> decl PROG prog EOF
+
+State 50:
+## Known stack suffix:
+## automaton
+## LR(1) items:
+automaton' -> automaton . [ # ]
+## Transitions:
+## Reductions:
+-- On #
+--   accept automaton
+
